@@ -1,6 +1,12 @@
 {
-  "version": 2,
-  "buildCommand": "npm run build",
-  "installCommand": "npm install && npm install --prefix frontend && npm install --prefix backend",
-  "outputDirectory": "frontend/dist"
+  "experimentalServices": {
+    "frontend": {
+      "root": "frontend",
+      "routePrefix": "/"
+    },
+    "backend": {
+      "root": "backend",
+      "routePrefix": "/api"
+    }
+  }
 }

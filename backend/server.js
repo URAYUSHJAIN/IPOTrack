@@ -15,7 +15,7 @@ const TTL = parseInt(process.env.CACHE_TTL) || 3600;
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+    origin: '*',
     methods: ['GET'],
   })
 );

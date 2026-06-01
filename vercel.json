@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "installCommand": "npm install && npm install --prefix frontend && npm install --prefix backend",
+  "env": {
+    "NODE_ENV": {
+      "value": "production"
+    }
+  },
+  "functions": {
+    "backend/server.js": {
+      "memory": 1024,
+      "maxDuration": 60,
+      "runtime": "nodejs20.x"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/server.js",
+      "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+      "headers": {
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type"
+      }
+    },
+    {
+      "src": "/health",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/dist/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/static/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}

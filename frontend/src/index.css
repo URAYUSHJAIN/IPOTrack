@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #fafafa;
+    color: #111111;
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #eaeaea;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00c853;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 hover:bg-accent hover:text-primary;
+  }
+
+  .btn-outline {
+    @apply border border-secondary text-primary rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 hover:border-accent hover:text-accent;
+  }
+
+  .card {
+    @apply bg-surface rounded-xl shadow-card border border-secondary;
+  }
+
+  .badge-gain {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-green-50 text-accent;
+  }
+
+  .badge-loss {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-red-50 text-danger;
+  }
+
+  .badge-neutral {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-gray-100 text-gray-600;
+  }
+}
+
+/* Blinking live dot */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+.live-dot {
+  animation: blink 1.4s ease-in-out infinite;
+}
+
+/* Subtle radial gradient page background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(0, 200, 83, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 100% 100%, rgba(0, 200, 83, 0.04) 0%, transparent 60%);
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}

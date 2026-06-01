@@ -1,0 +1,261 @@
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+.next/
+out/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.production.local
+.env.development.local
+.env.test.local
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.sublime-project
+.vim/
+.netrwhist
+*~
+
+# OS files
+Thumbs.db
+.DS_Store
+desktop.ini
+.Spotlight-V100
+.Trashes
+._*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log*
+
+# Cache
+.cache/
+.parcel-cache
+.eslintcache
+.node_repl_history
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+jest-coverage/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Vercel
+.vercel/
+.env.*.local
+
+# Misc
+.turbo/
+dist-ssr
+*.local
+*.pem
+
+# Backend specific
+backend/node_modules/
+backend/dist/
+backend/build/
+backend/.env
+backend/.env.local
+backend/logs/
+
+# Frontend specific
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.env
+frontend/.env.local
+frontend/.parcel-cache
+frontend/.cache/
+
+# Database (if any)
+*.db
+*.sqlite
+*.sqlite3
+
+# System files
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# NPM
+npm-debug.log
+npm-error.log
+.npm/
+
+# YARN
+.yarn-integrity
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Credentials and secrets
+*.pem
+*.key
+*.cert
+.aws/
+credentials.json
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.vscode/*.swp
+.vscode/*.swo
+*~.nib
+
+# IDE - IntelliJ
+out/
+.idea_modules/
+*.iws
+*.ipr
+
+# IDE - Sublime Text
+Sublime Text.sublime-settings
+
+# IDE - WebStorm
+.WebStorm*
+
+# IDE - PyCharm
+.PyCharm*
+
+# OS generated files
+ehthumbs.db
+Icon?
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Node
+.npm
+.eslintcache
+.node_repl_history
+
+# Ruby
+.ruby-version
+.ruby-gemset
+.rvm/
+
+# Go
+*.out
+dist/
+
+# General build artifacts
+*.o
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+
+# Compiled Python files
+*.pyc
+*.pyo
+*.egg-info/
+
+# Local deployment
+.env.production
+.env.staging
+
+# Vercel CLI
+.vercel
+
+# Package managers
+.pnpm-store/
+
+# Playwright
+playwright/
+.auth/
+
+# Custom project files
+.claude/
+claude-context.txt
+
+# Temporary development files
+*.todo
+TODO.md
+NOTES.md
+test-results/
+temp-files/
+
+# Sensitive data
+apikeys.json
+secrets.json
+.secrets/
+private/
+
+# Backups
+*.backup
+*.bkp
+*.old
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Generated files that shouldn't be committed
+generated/
+dist-old/
+build-old/
+
+# Branch-specific ignores
+.branch-*
+feature-*-temp/

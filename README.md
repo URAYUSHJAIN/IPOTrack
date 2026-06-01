@@ -6,7 +6,7 @@
 [![Vite](https://img.shields.io/badge/Vite-v5+-purple?logo=vite)](https://vitejs.dev)
 
 <div align="center">
-  <img src="frontend/public/logo.svg" alt="IPOTrack" width="120" height="120" />
+  <img src="frontend/public/logo.png" alt="IPOTrack" width="120" height="120" />
   <p><strong>Track Indian IPOs in real-time</strong></p>
   <p>Monitor upcoming, open, and listed IPO data with live GMP tracking, subscription charts, and investment calculations.</p>
 </div>
@@ -259,7 +259,7 @@ npm install --prefix frontend
 npm install --prefix backend
 
 # Terminal 1: Backend dev server (auto-reload with nodemon)
-cd backend
+cd backendI
 npm run dev
 
 # Terminal 2: Frontend dev server with HMR

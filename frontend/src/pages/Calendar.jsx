@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api.js';
 import SkeletonLoader from '../components/SkeletonLoader.jsx';
 
 function parseDate(dateStr) {
@@ -30,9 +30,9 @@ export default function Calendar() {
 
   useEffect(() => {
     Promise.all([
-      axios.get('/api/ipo/upcoming'),
-      axios.get('/api/ipo/open'),
-      axios.get('/api/ipo/listed'),
+      api.get('/api/ipo/upcoming'),
+      api.get('/api/ipo/open'),
+      api.get('/api/ipo/listed'),
     ])
       .then(([upRes, opRes, liRes]) => {
         setUpcoming(upRes.data.data || []);

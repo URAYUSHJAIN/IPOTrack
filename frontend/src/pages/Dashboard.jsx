@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import axios from 'axios';
+import api from '../api.js';
 import StatCard from '../components/StatCard.jsx';
 import IPOCard from '../components/IPOCard.jsx';
 import SubscriptionChart from '../components/SubscriptionChart.jsx';
@@ -20,8 +20,8 @@ export default function Dashboard() {
     setError(null);
     try {
       const [statsRes, openRes] = await Promise.all([
-        axios.get('/api/ipo/stats'),
-        axios.get('/api/ipo/open'),
+        api.get('/api/ipo/stats'),
+        api.get('/api/ipo/open'),
       ]);
       setStats(statsRes.data.data);
       setOpenIPOs(openRes.data.data || []);

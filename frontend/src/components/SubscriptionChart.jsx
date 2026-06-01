@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api.js';
 import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -25,7 +25,7 @@ export default function SubscriptionChart({ ipoSlug, ipoName }) {
       return;
     }
 
-    axios
+    api
       .get(`/api/ipo/subscription/${ipoSlug}`)
       .then((res) => {
         setData(res.data.data);

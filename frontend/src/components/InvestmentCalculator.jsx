@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api.js';
 
 export default function InvestmentCalculator() {
   const [open, setOpen] = useState(false);
@@ -15,7 +15,7 @@ export default function InvestmentCalculator() {
 
   useEffect(() => {
     if (open) {
-      Promise.all([axios.get('/api/ipo/upcoming'), axios.get('/api/ipo/open')])
+      Promise.all([api.get('/api/ipo/upcoming'), api.get('/api/ipo/open')])
         .then(([upRes, opRes]) => {
           const all = [...(upRes.data.data || []), ...(opRes.data.data || [])];
           setIpoList(all.slice(0, 20)); // Limit to first 20

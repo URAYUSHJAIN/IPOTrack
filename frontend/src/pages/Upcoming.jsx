@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api.js';
 import IPOTable from '../components/IPOTable.jsx';
 import CountdownTimer from '../components/CountdownTimer.jsx';
 import SkeletonLoader from '../components/SkeletonLoader.jsx';
@@ -11,7 +11,7 @@ export default function Upcoming() {
   const [stale, setStale] = useState(false);
 
   useEffect(() => {
-    axios
+    api
       .get('/api/ipo/upcoming')
       .then((res) => {
         setIpos(res.data.data || []);

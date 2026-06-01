@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api.js';
 import IPOTable from '../components/IPOTable.jsx';
 import SkeletonLoader from '../components/SkeletonLoader.jsx';
 
@@ -20,7 +20,7 @@ export default function PastIPOs() {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    axios
+    api
       .get('/api/ipo/listed')
       .then((res) => {
         setIpos(res.data.data || []);

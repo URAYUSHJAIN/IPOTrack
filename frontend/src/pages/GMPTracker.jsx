@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api.js';
 import GMPChart from '../components/GMPChart.jsx';
 import IPOTable from '../components/IPOTable.jsx';
 import SkeletonLoader from '../components/SkeletonLoader.jsx';
@@ -11,7 +11,7 @@ export default function GMPTracker() {
   const [stale, setStale] = useState(false);
 
   useEffect(() => {
-    axios
+    api
       .get('/api/ipo/gmp')
       .then((res) => {
         setData(res.data.data || []);
